@@ -16,6 +16,7 @@ public class Client<date> {
     private String second_contact;
     private String email;
     private String password;
+    private String address;
     private int television;
     private int mobile_phone;
     private int telephone;
@@ -25,7 +26,7 @@ public class Client<date> {
     private Date Update_Date;
     private String Update_User;
 
-    public Client(int id, String name, String first_surname, String second_surname, String phone, String second_contact, String email, String password, int television, int mobile_phone, int telephone, int internet, Date creation_Date, String creation_User, Date update_Date, String update_User) {
+    public Client(int id, String name, String first_surname, String second_surname, String phone, String second_contact, String email, String password, int television, int mobile_phone, int telephone, int internet, Date creation_Date, String creation_User, Date update_Date, String update_User, String address) {
         Id = id;
         this.name = name;
         this.first_surname = first_surname;
@@ -38,6 +39,7 @@ public class Client<date> {
         this.mobile_phone = mobile_phone;
         this.telephone = telephone;
         this.internet = internet;
+        this.address = address;
         Creation_Date = creation_Date;
         Creation_User = creation_User;
         Update_Date = update_Date;
@@ -176,4 +178,9 @@ public class Client<date> {
     public void setUpdate_User(String update_User) {
         Update_User = update_User;
     }
+
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) { this.address = address; }
+
 }
