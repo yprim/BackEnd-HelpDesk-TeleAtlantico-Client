@@ -34,9 +34,9 @@ public class ClientController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public Client getUsersByEmail(@RequestBody Client client)
+    public Client SelectClientByEmail(@RequestBody Client client)
     {
-        return service.getUsersByEmail(client);
+        return service.SelectClientByEmail(client);
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
