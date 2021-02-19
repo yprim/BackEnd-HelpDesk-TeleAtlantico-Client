@@ -6,7 +6,19 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "Client")
-public class Client<date> {
+@NamedStoredProcedureQuery( name = "Client.getClientByEmail",
+        procedureName = "SelectClientByEmail",
+        parameters = {
+                @StoredProcedureParameter(
+                        mode = ParameterMode.IN,
+                        name = "@Email",
+                        type = String.class),
+                @StoredProcedureParameter(
+                        mode = ParameterMode.IN,
+                        name = "@Password",
+                        type = String.class)})
+
+public class Client {
 
     private int Id;
     private String name;

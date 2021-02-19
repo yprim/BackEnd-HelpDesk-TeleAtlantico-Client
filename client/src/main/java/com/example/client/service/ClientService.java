@@ -18,5 +18,7 @@ public class ClientService {
     public void save(Client client){repository.save(client);}
     public Client get (int id){ return repository.findById(id).get();}
     public void delete(int id){repository.deleteById(id);}
-
+    public Client getUsersByEmail(Client client) {
+        return repository.getClientByEmail(client.getEmail(),client.getPassword());
+    }
 }
