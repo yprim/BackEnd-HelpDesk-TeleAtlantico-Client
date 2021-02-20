@@ -33,8 +33,14 @@ public class ClientController {
         }
     }
 
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    public Client SelectClientByEmail(@RequestBody Client client)
+    {
+        return service.SelectClientByEmail(client);
+    }
+
     @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public int add(Client client) {
+    public int add(@RequestBody Client client) {
         try {
             service.save(client);
             return 1;

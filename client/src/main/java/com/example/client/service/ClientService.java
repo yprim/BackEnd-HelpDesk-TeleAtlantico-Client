@@ -19,4 +19,7 @@ public class ClientService {
     public Client get (int id){ return repository.findById(id).get();}
     public void delete(int id){repository.deleteById(id);}
 
+    public Client SelectClientByEmail(Client client) {
+        return repository.SelectClientByEmail(client.getEmail(),client.getPassword());
+    }
 }
