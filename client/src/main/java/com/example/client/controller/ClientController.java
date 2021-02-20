@@ -23,8 +23,8 @@ public class ClientController {
         return service.listAll();
     }
 
-    @GetMapping("/client/{id}")
-    public ResponseEntity<Client> getStudentById(@PathVariable Integer id){
+    @GetMapping("/{id}")
+    public ResponseEntity<Client> getById(@PathVariable Integer id){
         try {
             Client client = service.get(id);
             return new ResponseEntity<Client>(client, HttpStatus.OK);
