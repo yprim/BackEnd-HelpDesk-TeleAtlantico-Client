@@ -20,4 +20,9 @@ public class IssueService {
     public void save(Issue issue){repository.save(issue);}
     public Issue get (int id){ return repository.findById(id).get();}
     public void delete(int id){repository.deleteById(id);}
+
+    public Issue getByClientId(int id){
+        return repository.findAll().get();
+    }
+
 }
