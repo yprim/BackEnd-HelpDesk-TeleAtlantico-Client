@@ -10,40 +10,42 @@ import java.sql.Date;
 public class Issue {
 
     private int id;
-    private String report_number;
+    private String reportNumber;
     private String address;
-    private String contact_phone;
-    private String contact_email;
+    private String contactPhone;
+    private String contactEmail;
     private String status;
-    private String support_user_asigned;
-    private int id_user;
+    private String supportUserAsigned;
+    private int idUser;
     private String description;
     private String service;
-    private Date Creation_Date;
-    private String Creation_User;
-    private Date Update_Date;
-    private String Update_User;
+    private Date CreationDate;
+    private String CreationUser;
+    private Date UpdateDate;
+    private String UpdateUser;
 
 
     public Issue() {
     }
 
-    public Issue(int id, String report_number, String address, String contact_phone, String contact_email, String status, String support_user_asigned, int id_user, String description, String service, Date creation_Date, String creation_User, Date update_Date, String update_User) {
+
+    public Issue(int id, String reportNumber, String address, String contactPhone, String contactEmail, String status, String supportUserAsigned, int idUser, String description, String service, Date creationDate, String creationUser, Date updateDate, String updateUser) {
         this.id = id;
-        this.report_number = report_number;
+        this.reportNumber = reportNumber;
         this.address = address;
-        this.contact_phone = contact_phone;
-        this.contact_email = contact_email;
+        this.contactPhone = contactPhone;
+        this.contactEmail = contactEmail;
         this.status = status;
-        this.support_user_asigned = support_user_asigned;
-        this.id_user = id_user;
+        this.supportUserAsigned = supportUserAsigned;
+        this.idUser = idUser;
         this.description = description;
         this.service = service;
-        Creation_Date = creation_Date;
-        Creation_User = creation_User;
-        Update_Date = update_Date;
-        Update_User = update_User;
+        CreationDate = creationDate;
+        CreationUser = creationUser;
+        UpdateDate = updateDate;
+        UpdateUser = updateUser;
     }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,12 +57,12 @@ public class Issue {
         this.id = id;
     }
 
-    public String getReport_number() {
-        return report_number;
+    public String getReportNumber() {
+        return reportNumber;
     }
 
-    public void setReport_number(String report_number) {
-        this.report_number = report_number;
+    public void setReportNumber(String reportNumber) {
+        this.reportNumber = reportNumber;
     }
 
     public String getAddress() {
@@ -71,20 +73,20 @@ public class Issue {
         this.address = address;
     }
 
-    public String getContact_phone() {
-        return contact_phone;
+    public String getContactPhone() {
+        return contactPhone;
     }
 
-    public void setContact_phone(String contact_phone) {
-        this.contact_phone = contact_phone;
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
     }
 
-    public String getContact_email() {
-        return contact_email;
+    public String getContactEmail() {
+        return contactEmail;
     }
 
-    public void setContact_email(String contact_email) {
-        this.contact_email = contact_email;
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
     }
 
     public String getStatus() {
@@ -95,20 +97,20 @@ public class Issue {
         this.status = status;
     }
 
-    public String getSupport_user_asigned() {
-        return support_user_asigned;
+    public String getSupportUserAsigned() {
+        return supportUserAsigned;
     }
 
-    public void setSupport_user_asigned(String support_user_asigned) {
-        this.support_user_asigned = support_user_asigned;
+    public void setSupportUserAsigned(String supportUserAsigned) {
+        this.supportUserAsigned = supportUserAsigned;
     }
 
-    public int getId_user() {
-        return id_user;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getDescription() {
@@ -127,36 +129,36 @@ public class Issue {
         this.service = service;
     }
 
-    public Date getCreation_Date() {
-        return Creation_Date;
+    public Date getCreationDate() {
+        return CreationDate;
     }
 
-    public void setCreation_Date(Date creation_Date) {
-        Creation_Date = creation_Date;
+    public void setCreationDate(Date creationDate) {
+        CreationDate = creationDate;
     }
 
-    public String getCreation_User() {
-        return Creation_User;
+    public String getCreationUser() {
+        return CreationUser;
     }
 
-    public void setCreation_User(String creation_User) {
-        Creation_User = creation_User;
+    public void setCreationUser(String creationUser) {
+        CreationUser = creationUser;
     }
 
-    public Date getUpdate_Date() {
-        return Update_Date;
+    public Date getUpdateDate() {
+        return UpdateDate;
     }
 
-    public void setUpdate_Date(Date update_Date) {
-        Update_Date = update_Date;
+    public void setUpdateDate(Date updateDate) {
+        UpdateDate = updateDate;
     }
 
-    public String getUpdate_User() {
-        return Update_User;
+    public String getUpdateUser() {
+        return UpdateUser;
     }
 
-    public void setUpdate_User(String update_User) {
-        Update_User = update_User;
+    public void setUpdateUser(String updateUser) {
+        UpdateUser = updateUser;
     }
 
 
