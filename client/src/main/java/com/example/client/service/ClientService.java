@@ -16,7 +16,9 @@ public class ClientService {
     private ClientRepository repository;
 
     public List<Client> listAll(){return repository.findAll();}
-    public void save(Client client){repository.save(client);}
+    public void save(Client client){
+        repository.save(client);
+    }
     public Client get (int id){ return repository.findById(id).get();}
     public void delete(int id){repository.deleteById(id);}
 

@@ -52,9 +52,7 @@ public class ClientController {
            // headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
            // HttpEntity<Client> entity = new HttpEntity<Client>(client,headers);
 
-
             ResponseEntity<Client> response=restTemplate.postForEntity("https://localhost:44359/api/Client",client, Client.class);
-
 
             return 1;
         } catch (NoSuchElementException e) {

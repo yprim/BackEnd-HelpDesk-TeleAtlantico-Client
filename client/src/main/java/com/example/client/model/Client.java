@@ -25,6 +25,19 @@ public class Client {
     private String Name;
     private String FirstSurname;
     private String SecondSurname;
+    private String Phone;
+    private String SecondContact;
+    private String Email;
+    private String Password;
+    private String Address;
+    private int Television;
+    private int MobilePhone;
+    private int Telephone;
+    private int Internet;
+    private Date CreationDate;
+    private String CreationUser;
+    private Date UpdateDate;
+    private String UpdateUser;
 
     public Client(int id, String name, String firstSurname, String secondSurname, String phone, String secondContact, String email, String password, String address, int television, int mobilePhone, int telephone, int internet, Date creationDate, String creationUser, Date updateDate, String updateUser) {
         Id = id;
@@ -46,22 +59,6 @@ public class Client {
         UpdateUser = updateUser;
     }
 
-    private String Phone;
-    private String SecondContact;
-    private String Email;
-    private String Password;
-    private String Address;
-    private int Television;
-    private int MobilePhone;
-    private int Telephone;
-
-
-
-    private int Internet;
-    private Date CreationDate;
-    private String CreationUser;
-    private Date UpdateDate;
-    private String UpdateUser;
 
 
 

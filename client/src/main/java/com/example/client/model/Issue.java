@@ -9,16 +9,16 @@ import java.sql.Date;
 @Entity
 public class Issue {
 
-    private int id;
-    private String reportNumber;
-    private String address;
-    private String contactPhone;
-    private String contactEmail;
-    private String status;
-    private String supportUserAsigned;
-    private int idUser;
-    private String description;
-    private String service;
+    private int Id;
+    private String ReportNumber;
+    private String Address;
+    private String ContactPhone;
+    private String ContactEmail;
+    private String Status;
+    private String SupportUserAsigned;
+    private int IdUser;
+    private String Description;
+    private String Service;
     private Date CreationDate;
     private String CreationUser;
     private Date UpdateDate;
@@ -28,105 +28,103 @@ public class Issue {
     public Issue() {
     }
 
-
     public Issue(int id, String reportNumber, String address, String contactPhone, String contactEmail, String status, String supportUserAsigned, int idUser, String description, String service, Date creationDate, String creationUser, Date updateDate, String updateUser) {
-        this.id = id;
-        this.reportNumber = reportNumber;
-        this.address = address;
-        this.contactPhone = contactPhone;
-        this.contactEmail = contactEmail;
-        this.status = status;
-        this.supportUserAsigned = supportUserAsigned;
-        this.idUser = idUser;
-        this.description = description;
-        this.service = service;
+        Id = id;
+        ReportNumber = reportNumber;
+        Address = address;
+        ContactPhone = contactPhone;
+        ContactEmail = contactEmail;
+        Status = status;
+        SupportUserAsigned = supportUserAsigned;
+        IdUser = idUser;
+        Description = description;
+        Service = service;
         CreationDate = creationDate;
         CreationUser = creationUser;
         UpdateDate = updateDate;
         UpdateUser = updateUser;
     }
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getReportNumber() {
-        return reportNumber;
+        return ReportNumber;
     }
 
     public void setReportNumber(String reportNumber) {
-        this.reportNumber = reportNumber;
+        ReportNumber = reportNumber;
     }
 
     public String getAddress() {
-        return address;
+        return Address;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        Address = address;
     }
 
     public String getContactPhone() {
-        return contactPhone;
+        return ContactPhone;
     }
 
     public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone;
+        ContactPhone = contactPhone;
     }
 
     public String getContactEmail() {
-        return contactEmail;
+        return ContactEmail;
     }
 
     public void setContactEmail(String contactEmail) {
-        this.contactEmail = contactEmail;
+        ContactEmail = contactEmail;
     }
 
     public String getStatus() {
-        return status;
+        return Status;
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        Status = status;
     }
 
     public String getSupportUserAsigned() {
-        return supportUserAsigned;
+        return SupportUserAsigned;
     }
 
     public void setSupportUserAsigned(String supportUserAsigned) {
-        this.supportUserAsigned = supportUserAsigned;
+        SupportUserAsigned = supportUserAsigned;
     }
 
     public int getIdUser() {
-        return idUser;
+        return IdUser;
     }
 
     public void setIdUser(int idUser) {
-        this.idUser = idUser;
+        IdUser = idUser;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     public String getService() {
-        return service;
+        return Service;
     }
 
     public void setService(String service) {
-        this.service = service;
+        Service = service;
     }
 
     public Date getCreationDate() {
@@ -160,10 +158,4 @@ public class Issue {
     public void setUpdateUser(String updateUser) {
         UpdateUser = updateUser;
     }
-
-
-
-
-
-
 }

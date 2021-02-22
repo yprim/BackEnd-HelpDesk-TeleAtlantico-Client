@@ -9,10 +9,10 @@ import java.sql.Date;
 @Entity
 public class Comment {
 
-    private int id;
-    private String description;
-    private int idIssue;
-    private String reportNumber;
+    private int Id;
+    private String Description;
+    private int IdIssue;
+    private String ReportNumber;
     private Date CreationDate;
     private String CreationUser;
     private Date UpdateDate;
@@ -21,52 +21,49 @@ public class Comment {
     public Comment() {
     }
 
-
     public Comment(int id, String description, int idIssue, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
-        this.id = id;
-        this.description = description;
-        this.idIssue = idIssue;
-        this.reportNumber = reportNumber;
+        Id = id;
+        Description = description;
+        IdIssue = idIssue;
+        ReportNumber = reportNumber;
         CreationDate = creationDate;
         CreationUser = creationUser;
         UpdateDate = updateDate;
         UpdateUser = updateUser;
     }
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        Id = id;
     }
 
-
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     public int getIdIssue() {
-        return idIssue;
+        return IdIssue;
     }
 
     public void setIdIssue(int idIssue) {
-        this.idIssue = idIssue;
+        IdIssue = idIssue;
     }
 
     public String getReportNumber() {
-        return reportNumber;
+        return ReportNumber;
     }
 
     public void setReportNumber(String reportNumber) {
-        this.reportNumber = reportNumber;
+        ReportNumber = reportNumber;
     }
 
     public Date getCreationDate() {
@@ -100,5 +97,4 @@ public class Comment {
     public void setUpdateUser(String updateUser) {
         UpdateUser = updateUser;
     }
-
 }
