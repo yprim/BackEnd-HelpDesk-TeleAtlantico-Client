@@ -16,7 +16,6 @@ import java.util.NoSuchElementException;
 @RestController
 public class ClientController {
 
-
     @Autowired
     private ClientService service;
     RestTemplate restTemplate;

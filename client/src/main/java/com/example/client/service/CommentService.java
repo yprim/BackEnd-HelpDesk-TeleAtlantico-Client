@@ -1,6 +1,7 @@
 package com.example.client.service;
 
 import com.example.client.model.Comment;
+import com.example.client.model.Issue;
 import com.example.client.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,4 +19,8 @@ public class CommentService {
     public void save(Comment comment){repository.save(comment);}
     public Comment get (int id){ return repository.findById(id).get();}
     public void delete(int id){repository.deleteById(id);}
+
+    public List<Comment> SelectCommentByIssue(int id) {
+        return repository.SelectCommentByIssue(id);
+    }
 }
