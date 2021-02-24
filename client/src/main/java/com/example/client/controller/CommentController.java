@@ -35,6 +35,11 @@ public class CommentController {
         }
     }
 
+    @GetMapping("/comments/{id}")
+    public List<Comment> SelectCommentByIssue(@PathVariable Integer id) {
+        return service.SelectCommentByIssue(id);
+    }
+
     @RequestMapping(path = "/add", method = RequestMethod.POST)
     public int add(@RequestBody Comment comment) {
         try {

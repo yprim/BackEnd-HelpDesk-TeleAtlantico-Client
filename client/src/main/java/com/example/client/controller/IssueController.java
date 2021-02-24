@@ -24,6 +24,11 @@ public class IssueController {
         return service.listAll();
     }
 
+    @GetMapping("/issues/{id}")
+    public List<Issue> SelectIssueByClient(@PathVariable Integer id) {
+        return service.SelectIssueByClient(id);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Issue> getById(@PathVariable Integer id){
         try {

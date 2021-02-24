@@ -1,12 +1,18 @@
 package com.example.client.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "Comment")
+@NamedStoredProcedureQuery(
+        name = "Comment.SelectCommentByIssue",
+        procedureName = "SelectCommentByIssue",
+        parameters = {
+                @StoredProcedureParameter(
+                        mode = ParameterMode.IN,
+                        name = "id",
+                        type = Index.class)})
 public class Comment {
 
     private int Id;
