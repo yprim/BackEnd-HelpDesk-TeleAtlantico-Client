@@ -9,92 +9,92 @@ import java.sql.Date;
 @Entity
 public class Comment {
 
-    private int id;
-    private String description;
-    private int id_issue;
-    private String report_number;
-    private Date Creation_Date;
-    private String Creation_User;
-    private Date Update_Date;
-    private String Update_User;
+    private int Id;
+    private String Description;
+    private int IdIssue;
+    private String ReportNumber;
+    private Date CreationDate;
+    private String CreationUser;
+    private Date UpdateDate;
+    private String UpdateUser;
 
     public Comment() {
     }
 
-    public Comment(int id, String description, int id_issue, String report_number, Date creation_Date, String creation_User, Date update_Date, String update_User) {
-        this.id = id;
-        this.description = description;
-        this.id_issue = id_issue;
-        this.report_number = report_number;
-        Creation_Date = creation_Date;
-        Creation_User = creation_User;
-        Update_Date = update_Date;
-        Update_User = update_User;
+    public Comment(int id, String description, int idIssue, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
+        Id = id;
+        Description = description;
+        IdIssue = idIssue;
+        ReportNumber = reportNumber;
+        CreationDate = creationDate;
+        CreationUser = creationUser;
+        UpdateDate = updateDate;
+        UpdateUser = updateUser;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
-    public int getId_issue() {
-        return id_issue;
+    public int getIdIssue() {
+        return IdIssue;
     }
 
-    public void setId_issue(int id_issue) {
-        this.id_issue = id_issue;
+    public void setIdIssue(int idIssue) {
+        IdIssue = idIssue;
     }
 
-    public String getReport_number() {
-        return report_number;
+    public String getReportNumber() {
+        return ReportNumber;
     }
 
-    public void setReport_number(String report_number) {
-        this.report_number = report_number;
+    public void setReportNumber(String reportNumber) {
+        ReportNumber = reportNumber;
     }
 
-    public Date getCreation_Date() {
-        return Creation_Date;
+    public Date getCreationDate() {
+        return CreationDate;
     }
 
-    public void setCreation_Date(Date creation_Date) {
-        Creation_Date = creation_Date;
+    public void setCreationDate(Date creationDate) {
+        CreationDate = creationDate;
     }
 
-    public String getCreation_User() {
-        return Creation_User;
+    public String getCreationUser() {
+        return CreationUser;
     }
 
-    public void setCreation_User(String creation_User) {
-        Creation_User = creation_User;
+    public void setCreationUser(String creationUser) {
+        CreationUser = creationUser;
     }
 
-    public Date getUpdate_Date() {
-        return Update_Date;
+    public Date getUpdateDate() {
+        return UpdateDate;
     }
 
-    public void setUpdate_Date(Date update_Date) {
-        Update_Date = update_Date;
+    public void setUpdateDate(Date updateDate) {
+        UpdateDate = updateDate;
     }
 
-    public String getUpdate_User() {
-        return Update_User;
+    public String getUpdateUser() {
+        return UpdateUser;
     }
 
-    public void setUpdate_User(String update_User) {
-        Update_User = update_User;
+    public void setUpdateUser(String updateUser) {
+        UpdateUser = updateUser;
     }
 }

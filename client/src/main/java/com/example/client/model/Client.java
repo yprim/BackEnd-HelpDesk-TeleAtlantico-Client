@@ -22,42 +22,46 @@ import java.sql.Date;
 public class Client {
 
     private int Id;
-    private String name;
-    private String first_surname;
-    private String second_surname;
-    private String phone;
-    private String second_contact;
-    private String email;
-    private String password;
-    private String address;
-    private int television;
-    private int mobile_phone;
-    private int telephone;
-    private int internet;
-    private Date Creation_Date;
-    private String Creation_User;
-    private Date Update_Date;
-    private String Update_User;
+    private String Name;
+    private String FirstSurname;
+    private String SecondSurname;
+    private String Phone;
+    private String SecondContact;
+    private String Email;
+    private String Password;
+    private String Address;
+    private int Television;
+    private int MobilePhone;
+    private int Telephone;
+    private int Internet;
+    private Date CreationDate;
+    private String CreationUser;
+    private Date UpdateDate;
+    private String UpdateUser;
 
-    public Client(int id, String name, String first_surname, String second_surname, String phone, String second_contact, String email, String password, int television, int mobile_phone, int telephone, int internet, Date creation_Date, String creation_User, Date update_Date, String update_User, String address) {
+    public Client(int id, String name, String firstSurname, String secondSurname, String phone, String secondContact, String email, String password, String address, int television, int mobilePhone, int telephone, int internet, Date creationDate, String creationUser, Date updateDate, String updateUser) {
         Id = id;
-        this.name = name;
-        this.first_surname = first_surname;
-        this.second_surname = second_surname;
-        this.phone = phone;
-        this.second_contact = second_contact;
-        this.email = email;
-        this.password = password;
-        this.television = television;
-        this.mobile_phone = mobile_phone;
-        this.telephone = telephone;
-        this.internet = internet;
-        this.address = address;
-        Creation_Date = creation_Date;
-        Creation_User = creation_User;
-        Update_Date = update_Date;
-        Update_User = update_User;
+        Name = name;
+        FirstSurname = firstSurname;
+        SecondSurname = secondSurname;
+        Phone = phone;
+        SecondContact = secondContact;
+        Email = email;
+        Password = password;
+        Address = address;
+        Television = television;
+        MobilePhone = mobilePhone;
+        Telephone = telephone;
+        Internet = internet;
+        CreationDate = creationDate;
+        CreationUser = creationUser;
+        UpdateDate = updateDate;
+        UpdateUser = updateUser;
     }
+
+
+
+
 
     public Client() {
     }
@@ -72,128 +76,133 @@ public class Client {
         Id = id;
     }
 
+
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
-    public String getFirst_surname() {
-        return first_surname;
+    public String getFirstSurname() {
+        return FirstSurname;
     }
 
-    public void setFirst_surname(String first_surname) {
-        this.first_surname = first_surname;
+    public void setFirstSurname(String firstSurname) {
+        FirstSurname = firstSurname;
     }
 
-    public String getSecond_surname() {
-        return second_surname;
+    public String getSecondSurname() {
+        return SecondSurname;
     }
 
-    public void setSecond_surname(String second_surname) {
-        this.second_surname = second_surname;
+    public void setSecondSurname(String secondSurname) {
+        SecondSurname = secondSurname;
     }
 
     public String getPhone() {
-        return phone;
+        return Phone;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        Phone = phone;
     }
 
-    public String getSecond_contact() {
-        return second_contact;
+    public String getSecondContact() {
+        return SecondContact;
     }
 
-    public void setSecond_contact(String second_contact) {
-        this.second_contact = second_contact;
+    public void setSecondContact(String secondContact) {
+        SecondContact = secondContact;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        Password = password;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
     }
 
     public int getTelevision() {
-        return television;
+        return Television;
     }
 
     public void setTelevision(int television) {
-        this.television = television;
+        Television = television;
     }
 
-    public int getMobile_phone() {
-        return mobile_phone;
+    public int getMobilePhone() {
+        return MobilePhone;
     }
 
-    public void setMobile_phone(int mobile_phone) {
-        this.mobile_phone = mobile_phone;
+    public void setMobilePhone(int mobilePhone) {
+        MobilePhone = mobilePhone;
     }
 
     public int getTelephone() {
-        return telephone;
+        return Telephone;
     }
 
     public void setTelephone(int telephone) {
-        this.telephone = telephone;
+        Telephone = telephone;
     }
 
     public int getInternet() {
-        return internet;
+        return Internet;
     }
 
     public void setInternet(int internet) {
-        this.internet = internet;
+        Internet = internet;
     }
 
-    public Date getCreation_Date() {
-        return Creation_Date;
+    public Date getCreationDate() {
+        return CreationDate;
     }
 
-    public void setCreation_Date(Date creation_Date) {
-        Creation_Date = creation_Date;
+    public void setCreationDate(Date creationDate) {
+        CreationDate = creationDate;
     }
 
-    public String getCreation_User() {
-        return Creation_User;
+    public String getCreationUser() {
+        return CreationUser;
     }
 
-    public void setCreation_User(String creation_User) {
-        Creation_User = creation_User;
+    public void setCreationUser(String creationUser) {
+        CreationUser = creationUser;
     }
 
-    public Date getUpdate_Date() {
-        return Update_Date;
+    public Date getUpdateDate() {
+        return UpdateDate;
     }
 
-    public void setUpdate_Date(Date update_Date) {
-        Update_Date = update_Date;
+    public void setUpdateDate(Date updateDate) {
+        UpdateDate = updateDate;
     }
 
-    public String getUpdate_User() {
-        return Update_User;
+    public String getUpdateUser() {
+        return UpdateUser;
     }
 
-    public void setUpdate_User(String update_User) {
-        Update_User = update_User;
+    public void setUpdateUser(String updateUser) {
+        UpdateUser = updateUser;
     }
-
-    public String getAddress() { return address; }
-
-    public void setAddress(String address) { this.address = address; }
 
 }
