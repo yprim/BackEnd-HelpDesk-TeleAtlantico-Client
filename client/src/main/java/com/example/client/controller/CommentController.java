@@ -24,7 +24,7 @@ public class CommentController {
     @Autowired
     private CommentService service;
     @Autowired
-    private CommentConverter commnetConverter;
+    private CommentConverter commentConverter;
 
 
     @GetMapping("/comments")
@@ -43,8 +43,8 @@ public class CommentController {
     }
 
     @GetMapping("/comments/{id}")
-    public List<Comment> SelectCommentByIssue(@PathVariable Integer id) {
-        return service.SelectCommentByIssue(id);
+    public List<Comment> SelectCommentByIssue(@PathVariable String reportNumber) {
+        return service.SelectCommentByIssue(reportNumber);
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
@@ -60,7 +60,7 @@ public class CommentController {
     @RequestMapping(path = "/addCommentDTo", method = RequestMethod.POST)
     public int addCommentDTO(@RequestBody CommentDTO commentDTO) {
         try {
-        	Comment comment = commnetConverter.Response(commentDTO);
+        	Comment comment = commentConverter.Response(commentDTO);
             service.save(comment);
             return 1;
         } catch (NoSuchElementException e) {

@@ -14,8 +14,8 @@ import java.sql.Date;
         parameters = {
                 @StoredProcedureParameter(
                         mode = ParameterMode.IN,
-                        name = "id",
-                        type = Index.class)})
+                        name = "number",
+                        type = String.class)})
 public class Comment {
 
     private int id;

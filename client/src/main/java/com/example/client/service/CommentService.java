@@ -20,7 +20,7 @@ public class CommentService {
     public Comment get (int id){ return repository.findById(id).get();}
     public void delete(int id){repository.deleteById(id);}
 
-    public List<Comment> SelectCommentByIssue(int id) {
-        return repository.SelectCommentByIssue(id);
+    public List<Comment> SelectCommentByIssue(String report) {
+        return repository.SelectCommentByIssue(report);
     }
 }

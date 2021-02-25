@@ -14,7 +14,6 @@ public class CommentConverter {
 
 		Comment comment = new Comment();
 		comment.setDescription(commentDTO.getDescription());
-		comment.setIdIssue(commentDTO.getIdIssue());
 		comment.setReportNumber(commentDTO.getReportNumber());
 		comment.setCreationDate(commentDTO.getCreationDate());
 		comment.setCreationUser(commentDTO.getCreationUser());

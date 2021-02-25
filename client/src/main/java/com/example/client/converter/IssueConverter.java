@@ -31,6 +31,8 @@ public class IssueConverter  {
     public IssueDTO  Response(Issue issue) {
 
         IssueDTO issueDTO=new IssueDTO();
+        issueDTO.setClassification("");
+        issueDTO.setResolutionComment("");
         issueDTO.setReportNumber(issue.getReportNumber());
         issueDTO.setContactEmail(issue.getContactEmail());
         issueDTO.setStatus(issue.getStatus());
