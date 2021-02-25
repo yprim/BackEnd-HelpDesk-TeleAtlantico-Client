@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -25,6 +26,7 @@ public class CommentController {
     private CommentService service;
     @Autowired
     private CommentConverter commentConverter;
+    private RestTemplate restTemplate = new RestTemplate();
 
 
     @GetMapping("/comments")
@@ -51,6 +53,8 @@ public class CommentController {
     public int add(@RequestBody Comment comment) {
         try {
             service.save(comment);
+            CommentDTO commentDTO= commentConverter.Request(comment);
+            ResponseEntity<CommentDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Comment",commentDTO, CommentDTO.class);
             return 1;
         } catch (NoSuchElementException e) {
             return 0;

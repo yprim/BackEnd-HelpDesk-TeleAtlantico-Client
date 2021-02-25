@@ -20,7 +20,6 @@ public class Comment {
 
     private int id;
     private String description;
-    private int idIssue;
     private String reportNumber;
     private Date creationDate;
     private String creationUser;
@@ -30,10 +29,9 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(int id, String description, int idIssue, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
+    public Comment(int id, String description, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
         this.id = id;
         this.description = description;
-        this.idIssue = idIssue;
         this.reportNumber = reportNumber;
         this.creationDate = creationDate;
         this.creationUser = creationUser;
@@ -56,12 +54,7 @@ public class Comment {
         this.description = description;
     }
 
-    public int getIdIssue() {
-        return this.idIssue;
-    }
-    public void setIdIssue(int idIssue) {
-    	this.idIssue = idIssue;
-    }
+
 
     public String getReportNumber() {
         return this.reportNumber;

@@ -1,11 +1,7 @@
 package com.example.client.converter;
 
+import com.example.client.model.*;
 import org.springframework.stereotype.Service;
-
-import com.example.client.model.Client;
-import com.example.client.model.ClientDTO;
-import com.example.client.model.Comment;
-import com.example.client.model.CommentDTO;
 
 @Service
 public class CommentConverter {
@@ -24,8 +20,18 @@ public class CommentConverter {
 	        return comment;
 	    }
 
+	public CommentDTO Request(Comment comment ) {
 
-	    public Comment Request(ClientDTO comment) {
-	        return null;
-	    }
+		CommentDTO commentDTO = new CommentDTO();
+		commentDTO.setDescription(comment.getDescription());
+		commentDTO.setReportNumber(comment.getReportNumber());
+		commentDTO.setCreationDate(comment.getCreationDate());
+		commentDTO.setCreationUser(comment.getCreationUser());
+		commentDTO.setUpdateDate(comment.getUpdateDate());
+		commentDTO.setUpdateUser(comment.getUpdateUser());
+		commentDTO.setUpdateUser(comment.getUpdateUser());
+
+
+		return commentDTO;
+	}
 }
