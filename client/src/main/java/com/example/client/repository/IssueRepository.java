@@ -16,8 +16,8 @@ public interface IssueRepository extends JpaRepository<Issue, Integer> {
     @Query(value = "{ call SelectIssueByClient(:id)}", nativeQuery = true)
     List<Issue> SelectIssueByClient(@Param("id") Integer id);
 
-    @Query(value = "{ call SelectIssueByReportNumber(:Number)}", nativeQuery = true)
-    Issue SelectIssueByReportNumber(@Param("Number") String Number);
+    @Query(value = "{ call SelectIssueByReportNumber(:number)}", nativeQuery = true)
+    Issue SelectIssueByReportNumber(@Param("number") String number);
 
 
 }

@@ -24,10 +24,10 @@ public class IssueService {
     public List<Issue> SelectIssueByClient(int id) {
         return repository.SelectIssueByClient(id);
     }
-    public Issue update(Issue issue) {
-        return repository.save(issue);
-    }
+    public Issue update(Issue issue) {return repository.save(issue);}
     public Issue SelectIssueByReportNumber(IssueDTO issue) {
         return repository.SelectIssueByReportNumber(issue.getReportNumber());
     }
+
+
 }

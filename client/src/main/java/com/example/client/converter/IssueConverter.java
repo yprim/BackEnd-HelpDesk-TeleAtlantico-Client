@@ -10,6 +10,7 @@ import static java.sql.Types.NULL;
 
 @Service
 public class IssueConverter  {
+
     @Autowired
     private IssueService service;
 

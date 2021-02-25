@@ -44,16 +44,18 @@ public class ClientController {
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public int add(@RequestBody Client client) {
+    public ClientDTO add(@RequestBody Client client) {
+
+        ClientDTO clientDTO= null;
         try {
             service.save(client);
-            ClientDTO clientDTO= clientConverter.Response(client);
+            clientDTO= clientConverter.Response(client);
             ResponseEntity<ClientDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Client",clientDTO, ClientDTO.class);
 
-            return 1;
         } catch (NoSuchElementException  e) {
-            return 0;
+            throw e;
         }
+        return clientDTO;
     }
 
     @DeleteMapping("/delete/{id}")
