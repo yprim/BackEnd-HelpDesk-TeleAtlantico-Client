@@ -59,8 +59,8 @@ public class IssueController {
     public ResponseEntity<Issue> update( @RequestBody IssueDTO issue) {
 
         try{
-            Issue  existingIssue = issueConverter.Request(issue);
-            service.update(existingIssue);
+            Issue existingIssue = service.SelectIssueByReportNumber(issue.getReportNumber());
+            service.update(issueConverter.Request(issue,existingIssue));
             return new ResponseEntity<Issue>(existingIssue, HttpStatus.OK);
 
         } catch (NoSuchElementException e) {

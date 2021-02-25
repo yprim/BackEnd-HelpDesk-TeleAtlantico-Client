@@ -46,7 +46,8 @@ public class ClientController {
     @RequestMapping(path = "/add", method = RequestMethod.POST)
     public ClientDTO add(@RequestBody Client client) {
 
-        ClientDTO clientDTO= null;
+
+        ClientDTO clientDTO = new ClientDTO();
         try {
             service.save(client);
             clientDTO= clientConverter.Response(client);

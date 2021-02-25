@@ -11,22 +11,19 @@ import static java.sql.Types.NULL;
 @Service
 public class IssueConverter  {
 
-    @Autowired
-    private IssueService service;
+
+    public Issue Request(IssueDTO issueDTO, Issue existingIssue) {
 
 
-    public Issue Request(IssueDTO issue) {
-
-        Issue existingIssue = service.SelectIssueByReportNumber(issue);
-        existingIssue.setReportNumber(issue.getReportNumber());
-        existingIssue.setContactEmail(issue.getContactEmail());
-        existingIssue.setStatus(issue.getStatus());
-        existingIssue.setDescription(issue.getDescription());
-        existingIssue.setService(issue.getService());
-        existingIssue.setCreationDate(issue.getCreationDate());
-        existingIssue.setCreationUser(issue.getCreationUser());
-        existingIssue.setUpdateDate(issue.getUpdateDate());
-        existingIssue.setUpdateUser(issue.getUpdateUser());
+        existingIssue.setReportNumber(issueDTO.getReportNumber());
+        existingIssue.setContactEmail(issueDTO.getContactEmail());
+        existingIssue.setStatus(issueDTO.getStatus());
+        existingIssue.setDescription(issueDTO.getDescription());
+        existingIssue.setService(issueDTO.getService());
+        existingIssue.setCreationDate(issueDTO.getCreationDate());
+        existingIssue.setCreationUser(issueDTO.getCreationUser());
+        existingIssue.setUpdateDate(issueDTO.getUpdateDate());
+        existingIssue.setUpdateUser(issueDTO.getUpdateUser());
 
         return existingIssue;
     }

@@ -1,5 +1,6 @@
 package com.example.client.controller;
 
+import com.example.client.model.ClientDTO;
 import com.example.client.model.Comment;
 import com.example.client.model.Issue;
 import com.example.client.service.CommentService;

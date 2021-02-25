@@ -25,8 +25,8 @@ public class IssueService {
         return repository.SelectIssueByClient(id);
     }
     public Issue update(Issue issue) {return repository.save(issue);}
-    public Issue SelectIssueByReportNumber(IssueDTO issue) {
-        return repository.SelectIssueByReportNumber(issue.getReportNumber());
+    public Issue SelectIssueByReportNumber(String reportNumber) {
+        return repository.SelectIssueByReportNumber(reportNumber);
     }
 
 
