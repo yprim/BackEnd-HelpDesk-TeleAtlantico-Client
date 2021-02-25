@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
+import com.example.client.converter.ClientConverter;
+import com.example.client.model.ClientDTO;
+
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(path = "/api/client")
@@ -18,7 +19,8 @@ public class ClientController {
 
     @Autowired
     private ClientService service;
-    RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
+    private ClientConverter clientConverter = new ClientConverter();
 
     @GetMapping("/clients")
     public List<Client> list() {
@@ -42,21 +44,18 @@ public class ClientController {
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public int add(@RequestBody Client client) {
+    public ClientDTO add(@RequestBody Client client) {
 
+        ClientDTO clientDTO= null;
         try {
             service.save(client);
+            clientDTO= clientConverter.Response(client);
+            ResponseEntity<ClientDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Client",clientDTO, ClientDTO.class);
 
-            //HttpHeaders headers = new HttpHeaders();
-           // headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-           // HttpEntity<Client> entity = new HttpEntity<Client>(client,headers);
-
-            //ResponseEntity<Client> response=restTemplate.postForEntity("https://localhost:44359/api/Client",client, Client.class);
-
-            return 1;
-        } catch (NoSuchElementException e) {
-            return 0;
+        } catch (NoSuchElementException  e) {
+            throw e;
         }
+        return clientDTO;
     }
 
     @DeleteMapping("/delete/{id}")

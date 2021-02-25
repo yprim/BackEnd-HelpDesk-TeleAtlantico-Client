@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.NoSuchElementException;
+import com.example.client.converter.IssueConverter;
+import com.example.client.model.IssueDTO;
+import org.springframework.web.client.RestTemplate;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(path = "/api/issue")
@@ -17,6 +19,8 @@ public class IssueController {
 
     @Autowired
     private IssueService service;
+    private RestTemplate restTemplate = new RestTemplate();
+    private IssueConverter issueConverter = new IssueConverter();
 
 
     @GetMapping("/issues")
@@ -43,9 +47,24 @@ public class IssueController {
     public int add(@RequestBody Issue issue) {
         try {
             service.save(issue);
+            IssueDTO issueDTO= issueConverter.Response(issue);
+            ResponseEntity<IssueDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Issue",issueDTO, IssueDTO.class);
             return 1;
         } catch (NoSuchElementException e) {
             return 0;
+        }
+    }
+
+    @RequestMapping(path = "/update", method = RequestMethod.PUT)
+    public ResponseEntity<Issue> update( @RequestBody IssueDTO issue) {
+
+        try{
+            Issue  existingIssue = issueConverter.Request(issue);
+            service.update(existingIssue);
+            return new ResponseEntity<Issue>(existingIssue, HttpStatus.OK);
+
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<Issue>(HttpStatus.NOT_FOUND);
         }
     }
 

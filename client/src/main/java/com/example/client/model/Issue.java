@@ -16,6 +16,17 @@ import java.sql.Date;
                         mode = ParameterMode.IN,
                         name = "id",
                         type = Index.class)})
+
+@NamedStoredProcedureQuery(
+        name = "Issue.SelectIssueByReportNumber",
+        procedureName = "SelectIssueByReportNumber",
+        parameters = {
+                @StoredProcedureParameter(
+                        mode = ParameterMode.IN,
+                        name = "number",
+                        type = String.class)
+        })
+
 public class Issue {
 
     private int Id;
