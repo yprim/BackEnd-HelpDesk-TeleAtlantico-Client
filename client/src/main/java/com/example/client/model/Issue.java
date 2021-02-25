@@ -9,153 +9,154 @@ import java.sql.Date;
 @Entity
 public class Issue {
 
-    private int Id;
-    private String ReportNumber;
-    private String Address;
-    private String ContactPhone;
-    private String ContactEmail;
-    private String Status;
-    private String SupportUserAsigned;
-    private int IdUser;
-    private String Description;
-    private String Service;
-    private Date CreationDate;
-    private String CreationUser;
-    private Date UpdateDate;
-    private String UpdateUser;
+    private int id;
+    private String reportNumber;
+    private String address;
+    private String contactPhone;
+    private String contactEmail;
+    private String status;
+    private String supportUserAsigned;
+    private int idUser;
+    private String description;
+    private String service;
+    private Date creationDate;
+    private String creationUser;
+    private Date updateDate;
+    private String updateUser;
 
 
     public Issue() {
     }
 
+
     public Issue(int id, String reportNumber, String address, String contactPhone, String contactEmail, String status, String supportUserAsigned, int idUser, String description, String service, Date creationDate, String creationUser, Date updateDate, String updateUser) {
-        Id = id;
-        ReportNumber = reportNumber;
-        Address = address;
-        ContactPhone = contactPhone;
-        ContactEmail = contactEmail;
-        Status = status;
-        SupportUserAsigned = supportUserAsigned;
-        IdUser = idUser;
-        Description = description;
-        Service = service;
-        CreationDate = creationDate;
-        CreationUser = creationUser;
-        UpdateDate = updateDate;
-        UpdateUser = updateUser;
+        this.id = id;
+        this.reportNumber = reportNumber;
+        this.address = address;
+        this.contactPhone = contactPhone;
+        this.contactEmail = contactEmail;
+        this.status = status;
+        this.supportUserAsigned = supportUserAsigned;
+        this.idUser = idUser;
+        this.description = description;
+        this.service = service;
+        this.creationDate = creationDate;
+        this.creationUser = creationUser;
+        this.updateDate = updateDate;
+        this.updateUser = updateUser;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getReportNumber() {
-        return ReportNumber;
+        return reportNumber;
     }
 
     public void setReportNumber(String reportNumber) {
-        ReportNumber = reportNumber;
+        this.reportNumber = reportNumber;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public String getContactPhone() {
-        return ContactPhone;
+        return contactPhone;
     }
 
     public void setContactPhone(String contactPhone) {
-        ContactPhone = contactPhone;
+        this.contactPhone = contactPhone;
     }
 
     public String getContactEmail() {
-        return ContactEmail;
+        return contactEmail;
     }
 
     public void setContactEmail(String contactEmail) {
-        ContactEmail = contactEmail;
+        this.contactEmail = contactEmail;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
     public String getSupportUserAsigned() {
-        return SupportUserAsigned;
+        return supportUserAsigned;
     }
 
     public void setSupportUserAsigned(String supportUserAsigned) {
-        SupportUserAsigned = supportUserAsigned;
+        this.supportUserAsigned = supportUserAsigned;
     }
 
     public int getIdUser() {
-        return IdUser;
+        return idUser;
     }
 
     public void setIdUser(int idUser) {
-        IdUser = idUser;
+        this.idUser = idUser;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public String getService() {
-        return Service;
+        return service;
     }
 
     public void setService(String service) {
-        Service = service;
+        this.service = service;
     }
 
     public Date getCreationDate() {
-        return CreationDate;
+        return creationDate;
     }
 
     public void setCreationDate(Date creationDate) {
-        CreationDate = creationDate;
+        this.creationDate = creationDate;
     }
 
     public String getCreationUser() {
-        return CreationUser;
+        return creationUser;
     }
 
     public void setCreationUser(String creationUser) {
-        CreationUser = creationUser;
+        this.creationUser = creationUser;
     }
 
     public Date getUpdateDate() {
-        return UpdateDate;
+        return updateDate;
     }
 
     public void setUpdateDate(Date updateDate) {
-        UpdateDate = updateDate;
+        this.updateDate = updateDate;
     }
 
     public String getUpdateUser() {
-        return UpdateUser;
+        return updateUser;
     }
 
     public void setUpdateUser(String updateUser) {
-        UpdateUser = updateUser;
+        this.updateUser = updateUser;
     }
 }
