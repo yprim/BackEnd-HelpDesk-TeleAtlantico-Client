@@ -23,5 +23,7 @@ public class IssueService {
     public List<Issue> SelectIssueByClient(int id) {
         return repository.SelectIssueByClient(id);
     }
-
+    public Issue update(Issue issue) {
+        return repository.save(issue);
+    }
 }
