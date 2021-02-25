@@ -1,8 +1,12 @@
 package com.example.client.controller;
 
+import com.example.client.converter.CommentConverter;
+import com.example.client.converter.IssueConverter;
 import com.example.client.model.ClientDTO;
 import com.example.client.model.Comment;
+import com.example.client.model.CommentDTO;
 import com.example.client.model.Issue;
+import com.example.client.model.IssueDTO;
 import com.example.client.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +23,8 @@ public class CommentController {
 
     @Autowired
     private CommentService service;
+    @Autowired
+    private CommentConverter commnetConverter;
 
 
     @GetMapping("/comments")
@@ -44,6 +50,17 @@ public class CommentController {
     @RequestMapping(path = "/add", method = RequestMethod.POST)
     public int add(@RequestBody Comment comment) {
         try {
+            service.save(comment);
+            return 1;
+        } catch (NoSuchElementException e) {
+            return 0;
+        }
+    }
+    
+    @RequestMapping(path = "/addCommentDTo", method = RequestMethod.POST)
+    public int addCommentDTO(@RequestBody CommentDTO commentDTO) {
+        try {
+        	Comment comment = commnetConverter.Response(commentDTO);
             service.save(comment);
             return 1;
         } catch (NoSuchElementException e) {

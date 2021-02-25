@@ -1,37 +1,30 @@
 package com.example.client.model;
 
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.sql.Date;
 
-@Entity
-@Table(name = "Comment")
-@NamedStoredProcedureQuery(
-        name = "Comment.SelectCommentByIssue",
-        procedureName = "SelectCommentByIssue",
-        parameters = {
-                @StoredProcedureParameter(
-                        mode = ParameterMode.IN,
-                        name = "id",
-                        type = Index.class)})
-public class Comment {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    private int id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class CommentDTO {
+	
     private String description;
     private int idIssue;
     private String reportNumber;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date creationDate;
     private String creationUser;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date updateDate;
     private String updateUser;
 
-    public Comment() {
+    public CommentDTO() {
     }
 
-    public Comment(int id, String description, int idIssue, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
-        this.id = id;
+    public CommentDTO( String description, int idIssue, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
         this.description = description;
         this.idIssue = idIssue;
         this.reportNumber = reportNumber;
@@ -41,57 +34,64 @@ public class Comment {
         this.updateUser = updateUser;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
-        return this.id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+    @JsonProperty("Description")
     public String getDescription() {
         return this.description;
     }
+    @JsonProperty("Description")
     public void setDescription(String description) {
         this.description = description;
     }
 
+    @JsonProperty("Issue")
     public int getIdIssue() {
         return this.idIssue;
     }
+    @JsonProperty("Issue")
     public void setIdIssue(int idIssue) {
     	this.idIssue = idIssue;
     }
 
+    @JsonProperty("ReportNumber")
     public String getReportNumber() {
         return this.reportNumber;
     }
+    @JsonProperty("ReportNumber")
     public void setReportNumber(String reportNumber) {
     	this.reportNumber = reportNumber;
     }
+    @JsonProperty("CreationDate")
     public Date getCreationDate() {
         return this.creationDate;
     }
+    @JsonProperty("CreationDate")
     public void setCreationDate(Date creationDate) {
     	this.creationDate = creationDate;
     }
+    @JsonProperty("CreationUser")
     public String getCreationUser() {
         return this.creationUser;
     }
+    @JsonProperty("CreationUser")
     public void setCreationUser(String creationUser) {
     	this.creationUser = creationUser;
     }
+    @JsonProperty("UpdateDate")
     public Date getUpdateDate() {
         return this.updateDate;
     }
+    @JsonProperty("UpdateDate")
     public void setUpdateDate(Date updateDate) {
     	this.updateDate = updateDate;
     }
+    @JsonProperty("UpdateUser")
     public String getUpdateUser() {
         return this.updateUser;
     }
 
+    @JsonProperty("UpdateUser")
     public void setUpdateUser(String updateUser) {
         this.updateUser = updateUser;
     }
+
 }
