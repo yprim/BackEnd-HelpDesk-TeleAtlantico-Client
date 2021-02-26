@@ -44,28 +44,31 @@ public class IssueController {
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public int add(@RequestBody Issue issue) {
+    public IssueDTO add(@RequestBody Issue issue) {
+        IssueDTO issueDTO=new IssueDTO();
         try {
             service.save(issue);
-            IssueDTO issueDTO= issueConverter.Response(issue);
+            issueDTO= issueConverter.Response(issue);
             ResponseEntity<IssueDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Issue",issueDTO, IssueDTO.class);
-            return 1;
+
         } catch (NoSuchElementException e) {
-            return 0;
+            throw e;
         }
+        return issueDTO;
     }
 
     @RequestMapping(path = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<Issue> update( @RequestBody IssueDTO issue) {
-
+    public Issue update( @RequestBody IssueDTO issue) {
+        Issue existingIssue =new Issue();
         try{
-            Issue existingIssue = service.SelectIssueByReportNumber(issue.getReportNumber());
+            existingIssue = service.SelectIssueByReportNumber(issue.getReportNumber());
             service.update(issueConverter.Request(issue,existingIssue));
-            return new ResponseEntity<Issue>(existingIssue, HttpStatus.OK);
+
 
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<Issue>(HttpStatus.NOT_FOUND);
+            throw e;
         }
+        return existingIssue;
     }
 
     @DeleteMapping("/delete/{id}")
