@@ -1,6 +1,9 @@
 package com.example.client.model;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Date;
 
 @Entity
@@ -11,96 +14,77 @@ import java.sql.Date;
         parameters = {
                 @StoredProcedureParameter(
                         mode = ParameterMode.IN,
-                        name = "id",
-                        type = Index.class)})
+                        name = "number",
+                        type = String.class)})
 public class Comment {
 
-    private int Id;
-    private String Description;
-    private int IdIssue;
-    private String ReportNumber;
-    private Date CreationDate;
-    private String CreationUser;
-    private Date UpdateDate;
-    private String UpdateUser;
+    private int id;
+    private String description;
+    private String reportNumber;
+    private Date creationDate;
+    private String creationUser;
+    private Date updateDate;
+    private String updateUser;
 
     public Comment() {
     }
 
-    public Comment(int id, String description, int idIssue, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
-        Id = id;
-        Description = description;
-        IdIssue = idIssue;
-        ReportNumber = reportNumber;
-        CreationDate = creationDate;
-        CreationUser = creationUser;
-        UpdateDate = updateDate;
-        UpdateUser = updateUser;
+    public Comment(int id, String description, String reportNumber, Date creationDate, String creationUser, Date updateDate, String updateUser) {
+        this.id = id;
+        this.description = description;
+        this.reportNumber = reportNumber;
+        this.creationDate = creationDate;
+        this.creationUser = creationUser;
+        this.updateDate = updateDate;
+        this.updateUser = updateUser;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
-        return Id;
+        return this.id;
     }
-
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
-
     public String getDescription() {
-        return Description;
+        return this.description;
     }
-
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
-    public int getIdIssue() {
-        return IdIssue;
-    }
 
-    public void setIdIssue(int idIssue) {
-        IdIssue = idIssue;
-    }
 
     public String getReportNumber() {
-        return ReportNumber;
+        return this.reportNumber;
     }
-
     public void setReportNumber(String reportNumber) {
-        ReportNumber = reportNumber;
+    	this.reportNumber = reportNumber;
     }
-
     public Date getCreationDate() {
-        return CreationDate;
+        return this.creationDate;
     }
-
     public void setCreationDate(Date creationDate) {
-        CreationDate = creationDate;
+    	this.creationDate = creationDate;
     }
-
     public String getCreationUser() {
-        return CreationUser;
+        return this.creationUser;
     }
-
     public void setCreationUser(String creationUser) {
-        CreationUser = creationUser;
+    	this.creationUser = creationUser;
     }
-
     public Date getUpdateDate() {
-        return UpdateDate;
+        return this.updateDate;
     }
-
     public void setUpdateDate(Date updateDate) {
-        UpdateDate = updateDate;
+    	this.updateDate = updateDate;
     }
-
     public String getUpdateUser() {
-        return UpdateUser;
+        return this.updateUser;
     }
 
     public void setUpdateUser(String updateUser) {
-        UpdateUser = updateUser;
+        this.updateUser = updateUser;
     }
 }
