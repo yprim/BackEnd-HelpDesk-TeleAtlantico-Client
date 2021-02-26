@@ -44,21 +44,23 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/comments/{id}")
+    @GetMapping("/comments/{reportNumber}")
     public List<Comment> SelectCommentByIssue(@PathVariable String reportNumber) {
         return service.SelectCommentByIssue(reportNumber);
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public int add(@RequestBody Comment comment) {
+    public CommentDTO add(@RequestBody Comment comment) {
+        CommentDTO commentDTO=new CommentDTO();
         try {
             service.save(comment);
-            CommentDTO commentDTO= commentConverter.Request(comment);
+            commentDTO= commentConverter.Request(comment);
             ResponseEntity<CommentDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Comment",commentDTO, CommentDTO.class);
-            return 1;
+
         } catch (NoSuchElementException e) {
-            return 0;
+           throw e;
         }
+        return commentDTO;
     }
     
     @RequestMapping(path = "/addCommentDTo", method = RequestMethod.POST)

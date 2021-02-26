@@ -13,5 +13,5 @@ import java.util.List;
 public interface CommentRepository extends JpaRepository<Comment, Integer> {
 
     @Query(value = "{ call SelectCommentByIssue(:number)}", nativeQuery = true)
-    List<Comment> SelectCommentByIssue(@Param("number") String report);
+    List<Comment> SelectCommentByIssue(@Param("number") String reportNumber);
 }
