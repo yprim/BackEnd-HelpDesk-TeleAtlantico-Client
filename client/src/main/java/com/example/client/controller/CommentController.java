@@ -55,7 +55,7 @@ public class CommentController {
         try {
             service.save(comment);
             commentDTO= commentConverter.Request(comment);
-            ResponseEntity<CommentDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Comment",commentDTO, CommentDTO.class);
+            ResponseEntity<CommentDTO> response=restTemplate.postForEntity("http://localhost:53802/api/Comment/PostFromClient",commentDTO, CommentDTO.class);
 
         } catch (NoSuchElementException e) {
            throw e;
