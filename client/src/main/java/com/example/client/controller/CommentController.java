@@ -44,7 +44,7 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/comments/{id}")
+    @GetMapping("/comments/{reportNumber}")
     public List<Comment> SelectCommentByIssue(@PathVariable String reportNumber) {
         return service.SelectCommentByIssue(reportNumber);
     }
